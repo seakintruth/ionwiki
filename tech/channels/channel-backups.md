@@ -32,10 +32,10 @@ Lightning Labs has implemented a new safe scheme for static channel backups \(SC
 Given their **seed and the latest back up file**, the users are able to recover both their on-chain funds and funds that are fully settled within their channels.
 
 {% hint style="info" %}
-"Fully settled" refers to funds that are in the base commitment outputs, not HTLCs.
+"Fully settled" refers to funds that are in the base commitment outputs, not [HTLCs](../bitcoin/hltc.md).
 {% endhint %}
 
-`lnd` can only restore funds as right after the channel is created. Resolving HTLCs is currently not possible.
+`lnd` can only restore funds as right after the channel is created. Resolving [HTLCs](../bitcoin/hltc.md) is currently not possible.
 
 Users can also recover from certain kinds of database corruption. Core code for handling recoveries is now in place, and combined with future planned developments, recovery of all funds in cases of data or device loss will be possible.
 
