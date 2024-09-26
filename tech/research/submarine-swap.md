@@ -34,13 +34,13 @@ Submarine swaps solve this issue by enabling Lightning channels to be refilled v
 1. Alice produces or retrieves a Lightning Network payment invoice.  _It doesn't matter whether the Lightning payment is to Alice or to someone else that Alice is trying to pay_.
 2. Alice presents the Lightning invoice to Bob, a "submarine swap provider".
 3. Bob quotes what he must be paid _on chain_ in order to pay the Lightning invoice _off-chain_.
-4. If Alice accepts the exchange rate, Bob and Alice work together and construct an HTLC that creates a conditional **on-chain** payment to Bob.
+4. If Alice accepts the exchange rate, Bob and Alice work together and construct an [HTLC](../bitcoin/hltc.md) that creates a conditional **on-chain** payment to Bob.
 5. Alice makes the conditional payment to Bob.
 6. The conditional payment to Bob is hashlocked with the same secret that will be revealed if the Lightning invoice is paid.  Bob can only redeem the conditional payment from Alice by making the Lightning payment.
 7. Bob pays the Lightning invoice, forcing the Lightning payment recipient to reveal the secret S.
 8. Bob uses the secret S to redeem the conditional payment from Alice.
 
-If Bob does not pay the Lightning invoice before it expires, Bob is not able to redeem the conditional payment from Alice. In this case, Alice can wait for the HTLC to expire, then redeem the conditional payment's funds back to herself.
+If Bob does not pay the Lightning invoice before it expires, Bob is not able to redeem the conditional payment from Alice. In this case, Alice can wait for the [HTLC](../bitcoin/hltc.md) to expire, then redeem the conditional payment's funds back to herself.
 
 What do submarine swaps allow you to do?
 
